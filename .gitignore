@@ -1,0 +1,54 @@
+# ─── Python bytecode ───────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ─── Virtualenv / Environments ─────────────────────
+.venv/
+env/
+ENV/
+.uv/
+
+# ─── Python tooling ────────────────────────────────
+.pytest_cache/
+.coverage
+coverage.xml
+.cache/
+.mypy_cache/
+dmypy.json
+.tox/
+.pyre/
+
+# ─── Packaging / Distribution ──────────────────────
+dist/
+build/
+*.egg-info/
+
+# ─── IDEs ───────────────────────────────────────────
+.vscode/
+.idea/
+
+# ─── AWS / SAM / CDK ───────────────────────────────
+.aws-sam/
+cdk.out/
+
+# ─── Docker ────────────────────────────────────────
+*.tar
+*.img
+*.container
+docker-compose.override.yml
+
+# ─── Logs ──────────────────────────────────────────
+*.log
+
+# ─── Local environment & secrets ───────────────────
+.env
+.env.*
+!.env.example
+local.env.json
+
+# ─── Editor swap/backup files ──────────────────────
+*~
+*.swp
+*.bak
+*.tmp
