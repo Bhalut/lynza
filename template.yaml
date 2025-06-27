@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  ProcessJsonFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: procesar-json
+      CodeUri: src/
+      Handler: app.handler.handler
+      Runtime: python3.11
+      Timeout: 10
+      MemorySize: 128
+      Environment:
+        Variables:
+          SQS_QUEUE_URL: http://localhost:4566/000000000000/mi-cola
