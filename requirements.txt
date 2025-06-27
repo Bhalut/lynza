@@ -1,0 +1,4 @@
+boto3>=1.28
+pydantic>=2.6
+python-dotenv
+aws-lambda-powertools>=2.30

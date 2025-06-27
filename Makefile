@@ -22,8 +22,8 @@ install:  ## Install project and dev dependencies (editable mode)
 	uv pip install -e .[dev]
 
 freeze:  ## Export dependency lockfiles for reproducible builds
-	uv pip freeze > requirements.txt
-	uv pip freeze --dev > requirements-dev.txt
+	uv pip freeze > requirements-dev.txt
+	grep -E -v '^(awscli|awscli-local|pytest|pytest-mock|moto|coverage|black|ruff|mypy|localstack|types-boto3|types-pyyaml)' requirements-dev.txt > requirements.txt
 
 # ─────────────────────────────
 # 🧹 Code Quality

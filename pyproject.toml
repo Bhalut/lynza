@@ -1,0 +1,53 @@
+[project]
+name = "lynza"
+version = "0.1.0"
+description = "Lambda que transforma JSON de S3 y lo envía a SQS"
+authors = [{ name = "Abdel Mejia", email = "28445496+Bhalut@users.noreply.github.com" }]
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "boto3>=1.28",
+    "pydantic>=2.6",
+    "python-dotenv",
+    "aws-lambda-powertools>=2.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "awscli",
+    "awscli-local",
+    "pytest>=8.0",
+    "pytest-mock",
+    "moto[server]>=5.0",
+    "coverage",
+    "black",
+    "ruff",
+    "mypy",
+    "localstack",
+    "types-boto3",
+    "types-pyyaml"
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I", "B"]
+exclude = [".venv"]
+
+[tool.mypy]
+python_version = 3.11
+check_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q --tb=short"
+markers = [
+    "integration: marks tests that require infrastructure (LocalStack)",
+    "unit: marks tests that are pure and isolated"
+]
+
